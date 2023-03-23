@@ -3,14 +3,14 @@ class MoviesController < ApplicationController
     #GET/movies
     def index
         movies = Movie.all
-        render json: movies
+        render json: movies, except: [:price, :description, :created_at, :updated_at], status: :ok
     end
 
     #GET /movies/:id
-    def show
+    def show 
         movie = Movie.find_by(id: params[:id])
         if movie
-            render json: movie
+            render json: movie, except: [:created_at, :updated_at]
         else
             render json: { error: "Movie not found" }, status: :not_found
         end
