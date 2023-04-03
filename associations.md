@@ -20,6 +20,8 @@
     - id of this parent must be used as foreign key on the child model
     - child model shold be in plural
 4. has_many :through
+    - is another way to implement many to many relationship
+    
 5. has_one :through
 6. has_and_belongs_to_many
     - used to implement a many to many relationship
