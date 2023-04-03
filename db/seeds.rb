@@ -123,3 +123,7 @@ Movie.create([
   
   }
 ])
+
+Movie.all.each do |movie|
+  movie.reviews.create(content: " dummy review for movie #{movie.id}")
+end
