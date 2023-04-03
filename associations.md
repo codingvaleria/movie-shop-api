@@ -22,6 +22,9 @@
 4. has_many :through
 5. has_one :through
 6. has_and_belongs_to_many
+    - used to implement a many to many relationship
+    - creates a direct many to many connection but requires a join table to support association
+    - indicates that each instance of declaring model refers to zero or more instances of another model
 
 # Types of relationship
 
@@ -31,3 +34,8 @@
 Keys
 1. Primary Key = is an attribute in a table which uniquely identifies an instance of a model. Cannot be null, must always be present
 2. Foreign Key = is a primary key that identifies a relationship to another model
+
+# join_table
+- Used for many to many relationship
+- unless the join table is explicitly specified as an **option**(defined in the relationship line), it is guessed using lexical order of class names
+- it sould not have a primary key or associated with it. it must be manually generated with a migration
